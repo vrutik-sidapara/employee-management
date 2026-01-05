@@ -121,7 +121,6 @@ exports.updateUser = async (req, res) => {
 
     const user = await userService.updateUser(userId, req.body);
 
-    // 🧹 Clear cache
     await redisClient.del(`user:${userId}`);
 
     return res.status(200).json({
@@ -162,7 +161,6 @@ exports.deleteUser = async (req, res) => {
 
     await userService.deleteUser(userId);
 
-    // 🧹 Clear cache
     await redisClient.del(`user:${userId}`);
 
     return res.status(200).json({
