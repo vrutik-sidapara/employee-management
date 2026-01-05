@@ -7,11 +7,11 @@ const userDao = require("../Dao/UserDao");
 exports.createUser = async (data) => {
   const { firstname, lastname, email, password, role_id } = data;
 
-  if (!firstname || !lastname || !email || !password || !role_id) {
-    const error = new Error("Required fields are missing");
-    error.statusCode = 400;
-    throw error;
-  }
+  // if (!firstname || !lastname || !email || !password || !role_id) {
+  //   const error = new Error("Required fields are missing");
+  //   error.statusCode = 400;
+  //   throw error;
+  // }
 
   const existingUser = await userDao.findByEmail(email);
   if (existingUser) {
