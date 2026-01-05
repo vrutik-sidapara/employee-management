@@ -66,7 +66,6 @@ exports.getUserById = async (req, res) => {
     const userId = req.params.id;
     const cacheKey = `user:${userId}`;
 
-    // 1️⃣ Check Redis cache
     const cachedUser = await redisClient.get(cacheKey);
     if (cachedUser) {
       return res.status(200).json({
@@ -76,10 +75,8 @@ exports.getUserById = async (req, res) => {
       });
     }
 
-    // 2️⃣ Fetch from database
     const user = await userService.getUserById(userId);
 
-    // 3️⃣ Save to Redis (TTL: 60 sec)
     await redisClient.set(cacheKey, JSON.stringify(user), { EX: 60 });
 
     return res.status(200).json({
