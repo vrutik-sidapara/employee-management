@@ -1,4 +1,4 @@
-const attendanceDao = require("../Dao/AttendanceDao");
+const attendanceDao = require("../dao/AttendanceDao");
 
 exports.createAttendance = async (data) => {
   const { user_id, date, check_in, check_out } = data;

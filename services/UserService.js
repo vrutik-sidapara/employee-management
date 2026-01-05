@@ -1,5 +1,5 @@
 const bcrypt = require("bcrypt");
-const userDao = require("../Dao/UserDao");
+const userDao = require("../dao/UserDao");
 
 /**
  * Create new user

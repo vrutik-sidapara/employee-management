@@ -1,4 +1,4 @@
-const overtimeDao = require('../Dao/OvertimeDao');
+const overtimeDao = require('../dao/OvertimeDao');
 
 exports.createOvertime = async (data) => {
   const { user_id, date, hours, rate_per_hour } = data;

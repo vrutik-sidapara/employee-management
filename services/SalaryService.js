@@ -1,4 +1,4 @@
-const salaryDao = require('../Dao/SalaryDao');
+const salaryDao = require('../dao/SalaryDao');
 
 exports.createSalary = async (data) => {
   const { user_id, total_days, amount, status } = data;

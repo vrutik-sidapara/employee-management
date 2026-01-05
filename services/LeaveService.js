@@ -1,4 +1,4 @@
-const leaveDao = require('../Dao/LeaveDao');
+const leaveDao = require('../dao/LeaveDao');
 
 exports.createLeave = async (data) => {
   const { user_id, reason, start_date, end_date, total_days } =
